@@ -6,6 +6,11 @@ utils = Blueprint(
 	"bp-returnvalue::UtilActor"
 )
 
+function GetUtilsActor()
+	return utils
+end
+Package.Export("GetUtilsActor", GetUtilsActor)
+
 local function ParseIntoArray(s, delimiter)
     local result = {};
         for match in (s..delimiter):gmatch("(.-)"..delimiter) do
