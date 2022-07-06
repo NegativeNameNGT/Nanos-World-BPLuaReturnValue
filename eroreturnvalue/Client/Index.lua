@@ -1,6 +1,6 @@
 local timer_interval = 500
 
-local utils = Blueprint(
+utils = Blueprint(
 	Vector(0,0,0),
 	Rotator(0,0,0),
 	"bp-returnvalue::UtilActor"
