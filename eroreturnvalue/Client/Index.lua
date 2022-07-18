@@ -1,4 +1,4 @@
-local timer_interval = 500
+local timer_interval = 20
 
 utils = Blueprint(
 	Vector(0,0,0),
