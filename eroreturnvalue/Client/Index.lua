@@ -24,17 +24,14 @@ Package.Subscribe("Load", function()
          for k,v in pairs(utils:GetActorTags()) do
              local name = ParseIntoArray(v, "&")
              local params = ParseIntoArray(name[2], "||")
-             Events.Call(name[1], params)
+             Events.Call(name[1], table.unpack(params))
              utils:RemoveActorTag(v)
          end
     end, timer_interval)
 end)
 
 
-Events.Subscribe("OnReturnValueBP", function(args)
-	local is_serverside = args[1]
-	local name = args[2]
-	local code = args[3]
+Events.Subscribe("OnReturnValueBP", function(is_serverside, name, code)
 	
 	if is_serverside == 'true' then
 		Events.CallRemote("ServerGetValue", code, name)
